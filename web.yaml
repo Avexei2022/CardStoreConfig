@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          bank:
+            url: http://localhost:8877/bank
+          warehouse:
+            url: http://localhost:8877/warehouse
+
+api:
+  basic-uri:
+    warehouse: http://localhost:8877/warehouse/
+    bank: http://localhost:8877/bank/
+
+# store:
+#   account:
+#     number: 3
+
+# tmpVar: configServer
