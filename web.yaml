@@ -1,4 +1,4 @@
-tmpVar: configserver
+# tmpVar: configserver
 
 # spring:
 #   cloud:
@@ -20,10 +20,10 @@ tmpVar: configserver
     #       predicates:
     #         - Path=/storefront/**
 
-api:
-  basic-uri:
-    store_warehouse: http://localhost:8765/storage
-    storefront: http://localhost:8765/storefront
+# api:
+#   basic-uri:
+#     store_warehouse: http://localhost:8765/storage
+#     storefront: http://localhost:8765/storefront
 
 # store:
 #   account:
