@@ -3,15 +3,15 @@ spring:
     openfeign:
       client:
         config:
-          bank:
-            url: http://localhost:8877/bank
-          warehouse:
-            url: http://localhost:8877/warehouse
+          storefront:
+            url: http://localhost:8765/storefront
+          store_warehouse:
+            url: http://localhost:8765/storage
 
 api:
   basic-uri:
-    warehouse: http://localhost:8877/warehouse/
-    bank: http://localhost:8877/bank/
+    store_warehouse: http://localhost:8765/storage
+    storefront: http://localhost:8765/storefront
 
 # store:
 #   account:
