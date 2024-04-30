@@ -2,13 +2,13 @@ tmpVar: configserver
 
 spring:
   cloud:
-    openfeign:
-      client:
-        config:
-          storefront:
-            url: http://localhost:8765/storefront
-          store_warehouse:
-            url: http://localhost:8765/storage
+    # openfeign:
+    #   client:
+    #     config:
+    #       storefront:
+    #         url: http://localhost:8765/storefront
+    #       store_warehouse:
+    #         url: http://localhost:8765/storage
     gateway:    
       routes:
         - id: store_warehouse
