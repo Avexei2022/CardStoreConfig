@@ -1,3 +1,5 @@
+tmpVar: configserver
+
 spring:
   cloud:
     openfeign:
@@ -7,14 +9,23 @@ spring:
             url: http://localhost:8765/storefront
           store_warehouse:
             url: http://localhost:8765/storage
+    gateway:    
+      routes:
+        - id: store_warehouse
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/storage/**
+        - id: storefront
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/storefront/**
 
-api:
-  basic-uri:
-    store_warehouse: http://localhost:8765/storage
-    storefront: http://localhost:8765/storefront
+# api:
+#   basic-uri:
+#     store_warehouse: http://localhost:8765/storage
+#     storefront: http://localhost:8765/storefront
 
 # store:
 #   account:
 #     number: 3
 
-# tmpVar: configServer
