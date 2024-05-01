@@ -1,4 +1,4 @@
-tmpVar: configserver
+tmpVar: api_gateway
 
 spring:
   cloud:
