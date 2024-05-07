@@ -7,15 +7,25 @@ spring:
   cloud:
     gateway:    
       routes:
+      # конфигурация маршрута до микросервисов
         - id: store_warehouse
           uri: http://localhost:8082/
           predicates:
             - Path=/storage/**
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
         - id: storefront
           uri: http://localhost:8083/
           predicates:
             - Path=/storefront/**
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
         - id: bank
           uri: http://localhost:8081/
           predicates:
             - Path=/bank/**
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
