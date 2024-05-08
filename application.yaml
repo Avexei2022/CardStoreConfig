@@ -12,9 +12,9 @@ spring:
           uri: http://localhost:8082/
           predicates:
             - Path=/storage/**
-          filters:
-            - TokenRelay=
-            - RemoveRequestHeader=Cookie
+          # filters:
+          #   - TokenRelay=
+          #   - RemoveRequestHeader=Cookie
         - id: storefront
           uri: http://localhost:8083/
           predicates:
@@ -26,6 +26,6 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/bank/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
