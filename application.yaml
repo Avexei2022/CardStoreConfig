@@ -26,6 +26,6 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/bank/**
-          filters:
-            - TokenRelay=
-            - RemoveRequestHeader=Cookie
+          # filters:
+          #   - TokenRelay=
+          #   - RemoveRequestHeader=Cookie
