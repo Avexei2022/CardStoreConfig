@@ -29,3 +29,10 @@ spring:
           # filters:
           #   - TokenRelay=
           #   - RemoveRequestHeader=Cookie
+        - id: store_resource_server
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/server/**
+          # filters:
+          #   - TokenRelay=
+          #   - RemoveRequestHeader=Cookie
