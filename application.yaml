@@ -32,7 +32,14 @@ spring:
         - id: store_resource_server
           uri: http://localhost:8084/
           predicates:
-            - Path=/server/**
+            - Path=/store_server/**
+          # filters:
+          #   - TokenRelay=
+          #   - RemoveRequestHeader=Cookie
+        - id: bank_resource_server
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/bank_server/**
           # filters:
           #   - TokenRelay=
           #   - RemoveRequestHeader=Cookie
