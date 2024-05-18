@@ -7,39 +7,29 @@ spring:
   cloud:
     gateway:    
       routes:
-      # конфигурация маршрута до микросервисов
+      # конфигурация маршрута до микросервисов:
+      # Веб-сервис склада магазина
         - id: store_warehouse
           uri: http://localhost:8082/
           predicates:
             - Path=/storage/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
+      # Веб-сервис торгового зала
         - id: storefront
           uri: http://localhost:8083/
           predicates:
             - Path=/storefront/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
+      # Веб-сервис банка
         - id: bank
           uri: http://localhost:8081/
           predicates:
             - Path=/bank/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
+      # Сервер ресурсов магазина
         - id: store_resource_server
           uri: http://localhost:8084/
           predicates:
             - Path=/store_server/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
+      # Сервис ресурсов банка
         - id: bank_resource_server
           uri: http://localhost:8085/
           predicates:
             - Path=/bank_server/**
-          # filters:
-          #   - TokenRelay=
-          #   - RemoveRequestHeader=Cookie
