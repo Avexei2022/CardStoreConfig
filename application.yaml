@@ -12,7 +12,7 @@ spring:
         - id: store_warehouse
           uri: http://localhost:8082/
           predicates:
-            - Path=/storage/index.html
+            - Path=/storage/**
       # Веб-сервис торгового зала
         - id: storefront
           uri: http://localhost:8083/
